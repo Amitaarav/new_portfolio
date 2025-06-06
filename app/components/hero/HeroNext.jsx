@@ -83,7 +83,7 @@ export const HeroNext = () => {
     
     {/* Hero image */}
     <Image
-      src={HeroImg3}
+      src={HeroImg}
       alt="hero image"
       className="w-[400px] sm:w-[500px] transition duration-300 group-hover:grayscale group-hover:scale-90"
     />
