@@ -27,21 +27,21 @@ const ServicesData = [
     id: 2,
     title: "Backend Engineering",
     icon: <TbServerBolt className="text-3xl" />,
-    desc: "Engineered low-latency backends with Node.js, Express, Kafka, and Prisma. Built REST APIs, WebSocket services, and database systems that scaled to 500K+ daily events.",
+    desc: "Engineered low-latency backends with Node.js, Express, Kafka, Redis and Prisma. Built REST APIs, WebSocket services, WebRTC, and database systems that scaled to 500K+ daily events.",
     delay: 0.4,
   },
   {
     id: 3,
     title: "DevOps & Cloud Infrastructure",
     icon: <HiOutlineCloud className="text-3xl" />,
-    desc: "Proficient in Docker, AWS, Kubernetes, and CI/CD. Designed resilient systems with 99.99% uptime and containerized microservices with secure deployments.",
+    desc: "Proficient in Docker, AWS, Kubernetes, Linux and CI/CD. Designed resilient systems with 99.99% uptime and containerized microservices with secure deployments.",
     delay: 0.6,
   },
   {
     id: 4,
     title: "Software Engineering at Scale",
     icon: <LuWorkflow className="text-3xl" />,
-    desc: "Skilled in building event-driven platforms and automation systems with Kafka, Redis, and PostgreSQL. Delivered systems that process 100K+ events/day reliably.",
+    desc: "Skilled in building event-driven platforms and automation systems with Kafka, Redis(Pub/Sub), WebSockets and PostgreSQL. Delivered systems that process 100K+ events/day with 99.99% uptime reliably.",
     delay: 0.8,
   },
 ];
@@ -49,7 +49,7 @@ const ServicesData = [
 
 export const Services = () => {
   return (
-    <section style={bgStyle} className="w-full">
+    <section id="services" style={bgStyle} className="w-full scroll">
       <div className="bg-gradient-to-b from-gray-800 via-black/70 to-black/40 text-white pt-28 md:pt-40 pb-20">
         <div className="container mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

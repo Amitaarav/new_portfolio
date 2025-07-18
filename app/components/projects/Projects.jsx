@@ -1,39 +1,125 @@
 "use client"
-import React from 'react'
-import Project1 from "../../assets/projects/p1.jpeg"
-import Project2 from "../../assets/projects/p2.jpg"
-import Project3 from "../../assets/Projects/p3.jpg"
+import React,{useState} from 'react'
+import MoneyTxn from "../../assets/projects/MoneyTXN.png"
+import VectorFlow from "../../assets/projects/Vector.png"
+import TriggerHub from "../../assets/projects/TriggerHub3.png"
+import NetflixGPT from "../../assets/projects/NetflixGPT.png"
+import Blog from "../../assets/projects/Blog.png"
+import Exchange from "../../assets/projects/Exchange.png"
+import Artistly from "../../assets/projects/Artistly.png"
+import Stream from "../../assets/projects/Stream.png"
+import Vettedge from "../../assets/projects/Vettedge.png"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 const projects = [
     {
         id: 1,
-        title: "Project 1",
+        title: "MoneyTXN (Fullstack)",
         link: "#",
-        desc: "Project 1 description",
-        image: Project1,
+        tech:"TypeScript, Next.js, Node.js, PostgreSQL, Tailwind CSS, Zod, NextAuth.js",
+        desc: "A secure fintech payment platform enabling atomic P2P and merchant transactions. Implements role-based auth via NextAuth.js, and a webhook-driven bank on-ramp system handling 10K+ events with SQL locks and Prisma transactions to ensure zero double-spend.",
+        image: MoneyTxn,
+        gitHub:"https://github.com/Amitaarav/MoneyTxn",
         delay:0.8
     },
     {
         id: 2,
-        title: "Project 2",
+        title: "TriggerHub: Workflow Automation (Fullstack)",
         link: "#",
-        desc: "Project 2 description",
-        image: Project2,
-        delay:0.6
+        tech:"Tech: Node.js, Next.js, TypeScript, Postgres, Kafka, ReactFlow",
+        desc: "An event-driven automation platform to handle high-volume webhooks and task workflows. Features a visual React Flow UI for building workflows, secure user auth, and Kafka-based pipelines ensuring 99.99% message reliability across 100K+ daily events.",
+        gitHub:"https://github.com/Amitaarav/TriggerHub",
+        image: TriggerHub,
+        delay:0.4
     },
     {
         id: 3,
-        title: "Project 3",
+        title:"NetflixGPT: AI-Powered Movie Discovery (Frontend + Firebase authentication)",
         link: "#",
-        desc: "Project 3 description",
-        image: Project3,
-        delay:0.4
+        tech: "Tech: React, Redux Toolkit, Firebase, TMDb API, Tailwind CSS",
+        desc: "An immersive, AI-driven movie streaming UI inspired by Netflix. NetflixGPT combines real-time recommendations, smart multilingual search powered by GPT, and dynamic video playback. Features include Firebase authentication, personalized movie lists, auto-playing trailers, and responsive design — all deployed seamlessly on Firebase Hosting. Users can discover movies in 10+ languages, with GPT-powered suggestions based on natural language queries.",
+        gitHub:"https://github.com/Amitaarav/NetflixGPT",
+        image: NetflixGPT,
+        delay:0.2
+
+    },
+    {
+        id: 4,
+        title:"BlogSphere: Secure Full-Stack Blog Platform (Fullstack)",
+        link: "#",
+        tech: "Tech: Hono (Edge), Prisma Accelerate, JWT, React, Vite, Redux, Tailwind CSS",
+        desc: "BlogSphere is a blazing-fast, secure blogging platform built using Cloudflare Workers with the Hono web framework and Prisma Client with Accelerate for edge-optimized data access. It enables seamless authentication, blog publishing, image upload stubs, and protected routes—all integrated with a modular frontend powered by React 18, Redux Toolkit, and Jodit Rich Text Editor.",
+        gitHub:"https://github.com/Amitaarav/BlogWeb",
+        image: Blog,
+        delay:0.2
+
+    },
+    {
+        id: 5,
+        title: " Real-Time Exchange Platform (Backend)",
+        link: "#",
+        tech:"Tech: TypeScript, Express.js, Redis, WebSockets, TimescaleDB",
+        desc: "Built a scalable crypto trading platform supporting 10K+ orders/sec with sub-50ms latency. Leveraged Redis Pub/Sub for trade matching and WebSocket-based live market feeds, integrated with TimescaleDB-powered analytics dashboards.",
+        gitHub:"https://github.com/Amitaarav/exchange-app",
+        image: Exchange,
+        delay:0.6
+    },
+    {
+        id: 6,
+        title: " Vector Shift workflow automation (Fullstack)",
+        link: "#",
+        tech:"Tech: JavaScript, Reactjs, React-flow, Fast-API",
+        desc: "A full-stack workflow automation tool designed to analyze and visualize graph-based systems. The application dynamically renders node-link diagrams using React Flow, allowing users to build custom workflows. It features backend integration via FastAPI to count and manage nodes and edges, enabling real-time updates, data persistence, and process validation. Optimized for scalability and modularity in handling complex graph structures.",
+        gitHub:"https://github.com/Amitaarav/vectorshift-workflow",
+        image: VectorFlow,
+        delay:0.6
+    },
+    {
+        id: 7,
+        title: " Vector Shift workflow automation (Fullstack)",
+        link: "https://artistly-com-abof.vercel.app/",
+        tech:"Tech: Next.js (App Router), React, Tailwind CSS, shadcn/ui, React Hook Form, Zod, Context API",
+        desc: "Artistly is a mobile-responsive frontend demo of a performing artist booking platform, developed as part of a frontend assessment. Built with modern React tooling and UI libraries, the app offers a polished and scalable foundation for integrating into a full-stack platform.",
+        gitHub:"https://github.com/Amitaarav/artistly.com",
+        image: Artistly,
+        delay:0.6
+    },
+        {
+        id: 8,
+        title: " Stream Deduplication Service (Backend)",
+        link: "#",
+        tech:"Tech:  Java 11, Maven, JUnit 5, Mockito, SOLID Principles, Strategy & Factory Design Patterns",
+        desc: "A scalable and modular backend service built in Java to solve streamer duplication across multiple 17LIVE sections. The system ensures that no top-3 streamer appears in the top positions of more than one section, improving content diversity and user experience. Designed with clean architecture principles and optimized for flexibility, the service is ready for real-world deployment.",
+        gitHub:"https://github.com/Amitaarav/17LiveAssignment-1",
+        image: Stream,
+        delay:0.6
+    },
+        {
+        id: 9,
+        title: " User Access Management System (Fullstack)",
+        link: "#",
+        tech:"Tech:  Node.js, Express.js, PostgreSQL, TypeORM, JWT, TypeScript, React, Tailwind CSS, React Hook Form, Context API, Vite",
+        desc: "A full-fledged system designed to securely manage user access to internal software tools and services with robust authentication, role-based authorization, and audit logging. Built with clean architecture and enterprise-grade security practices.",
+        gitHub:"https://github.com/Amitaarav/Software-Access-Manager",
+        image: Stream,
+        delay:0.6
+    },
+    {
+    id: 10,
+    title: "Vettedge : Modular AI Web App (Frontend)",
+    link: "https://vettedge.vercel.app/",
+    tech: "Tech: Next.js 13 App Router, React 19, Tailwind CSS, Framer Motion, Lucide",
+    desc: "Designed a modular, scalable, and responsive frontend platform to showcase enterprise-grade AI and professional service components. Implemented animated and dynamic UI using Framer Motion, Tailwind CSS, and reusable component architecture. Includes service modules like TalentPersona, DeepVet, EnterpriseGrade, etc., with structured component directories.",
+    gitHub: "https://github.com/Amitaarav/skillsCapital",
+    image: Vettedge,
+    delay: 0.5
     }
+    
 ]
 export const Projects = () => {
+    const [showMore, setShowMore] = useState(false)
     return (
-        <section className="bg-black text-white">
+        <section id="projects" className="bg-black text-white scroll">
             <div className="container py-10 xl:py-20 ">
                 
                     {/* Heading Title */}
@@ -55,29 +141,40 @@ export const Projects = () => {
                                             <Image
                                                 src={project.image}
                                                 alt="project image"
-                                                className="w-full" 
+                                                className="w-full rounded-t-md hover: transition-all ease-in-out delay-100 duration-300" 
                                                 
                                             />
                                             <div className="space-y-2 p-4">
-                                                <h1>
+                                                <h1 className='text-2xl font-semibold'>
                                                 {project.title}
                                                 </h1>
-                                                <p className="text-sm line-clamp-2 text-gray-200">
-                                                    {project.desc}
+                                                <h2 className="text-sm text-gray-400 font-medium">
+                                                    {project.tech}
+                                                </h2>
+                                                <p className="text-md line-clamp-2 text-gray-200">
+                                                    {showMore ? project.desc: `${project.desc.substring(0, 100)}...`}
+                                                    <button
+                                                    onClick={()=> setShowMore(prev => !prev)}
+                                                    >
+                                                        { showMore ? 'Show Less' : 'Show More'}
+                                                    </button>
                                                 </p>
                                             </div>
                                             {/* Hidden button section */}
                                             <div className="hidden group-hover:flex justify-around items-center duration-300">
-                                                <button className="border-2 border-white px-4 py-2 rounded-lg font-bold">
+                                                <button className="border-2 border-white px-4 py-2 rounded-lg font-bold hover:cursor-pointer"
+
+                                                onClick={() => window.open(project.link, "_blank")}>
                                                     Live
                                                 </button>
                                                 <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-4 py-2 rounded-md"
-                    >
-                        View Code
-                    </motion.button>
+                                                whileHover={{ scale: 1.05 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-4 py-2 rounded-md"
+                                                onClick={() => window.open(project.gitHub, "_blank")}
+                                                >
+                                                View Code
+                                            </motion.button>
                                             </div>
                                         </div>
 

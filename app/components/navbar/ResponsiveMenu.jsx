@@ -9,10 +9,14 @@ export const ResponsiveMenu = ({showMenu}) => {
                                 <ul className="flex flex-col items-start justify-center gap-10 w-[20%]">
                                 {NavLinks.map((link) => {
                                     return (
-                                    <li key={link.id} className="py-2 border-b-2 border-gray-700 hover:text-orange-400 transition-all duration-300 font-medium">
+                                    <li key={link.id} className="py-2 border-b-2 border-gray-700 hover:text-red-800 transition-all duration-300 font-medium">
                                             <Link href={link.link}>
                                                 {link.title}
                                             </Link> 
+
+                                            Hii hello my name is amit kumar Gupta
+                                            Now i have arrived at my Home
+                                            Today I am living with my family
                                     </li>
                                     )
                                 })}

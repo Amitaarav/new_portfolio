@@ -7,6 +7,8 @@ import HeroImg from "../../assets/red-man.png";
 import HeroImg3 from "../../assets/new_men_nobg.png";
 import Circle from "../../assets/circle.png";
 import Wall from "../../assets/wall.jpg" // Adjust path accordingly
+import { useInView } from "framer-motion"
+import { useRef} from "react"
 
 const wallBackground = {
     backgroundImage: `url(${Wall.src})`,
@@ -16,7 +18,15 @@ const wallBackground = {
     backgroundOpacity: 0.5,   
 }
 
+const countUp = [
+    { end: 20, label: "Projects Completed" },
+    { end: 100, label: "Commits in 2024" },
+    { end: 250, label: "DSA Problems Solved on Leetcode" }
+]
+
 export const HeroNext = () => {
+    const statRef = countUp.map(() => useRef(null));
+    const isInView = statRef.map((ref) => useInView(ref, { once: true }));
     return (
         <section style={wallBackground} className="bg-black text-white overflow-hidden">
             <div className="bg-gradient-to-r from-red-900/50 to-gray-950">
@@ -33,7 +43,7 @@ export const HeroNext = () => {
                             Amit Kumar Gupta
                         </h1>
                         <p className="text-gray-300 max-w-lg">
-                            I'm a Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
+                            A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -45,18 +55,20 @@ export const HeroNext = () => {
 
                         {/* Stats */}
                         <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-                            {[
-                                { end: 100, label: "Projects Completed" },
-                                { end: 199, label: "Commits in 2024" },
-                                { end: 50, label: "Clients" }
-                            ].map((stat, idx) => (
+                            {countUp.map((stat, idx) => (
                                 <motion.div
+                                    ref={statRef[idx]}
                                     key={idx}
                                     whileHover={{ scale: 1.05 }}
                                     className="flex flex-col items-center bg-gradient-to-b from-red-800 to-gray-900 border-2 border-red-900 rounded-xl p-4 w-32"
                                 >
                                     <p className="text-3xl font-bold">
-                                        <CountUp end={stat.end} start={0} suffix="+" delay={0.2} enableScrollSpy />
+                                        {isInView && (
+                                                <CountUp end={stat.end} start={0} suffix="+" delay={0.3} enableScrollSpy scrollSpyOnce>
+                                                {({countUpRef}) => <span ref={countUpRef}/>}    
+                                                 </CountUp>
+                                        )}
+                                        
                                     </p>
                                     <p className="text-gray-300 text-sm text-center">{stat.label}</p>
                                 </motion.div>

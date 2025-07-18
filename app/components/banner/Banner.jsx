@@ -52,10 +52,12 @@ export const Banner = () => {
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white font-semibold px-6 py-3 rounded-md"
               >
-                <div className="flex items-center gap-2">
-                  <FiDownload className="text-lg" />
-                  Download CV
-                </div>
+                <a href="./Amit_Gupta_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center gap-2">
+                      <FiDownload className="text-lg" />
+                      Download CV
+                    </div>
+                  </a>
               </motion.button>
             </div>
           </div>

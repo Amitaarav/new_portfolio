@@ -13,17 +13,17 @@ export const NavLinks = [
     {
         id: 2,
         title: "Contact",
-        link: "/contacts"
+        link: "#contacts"
     },
     {
         id: 3,
         title: "Projects",
-        link: "/projects"
+        link: "#projects"
     },
     {
         id: 4,
         title: "Services",
-        link: "/services"
+        link: "#services"
     }
 ]
 export const Navbar = () => {
@@ -35,8 +35,7 @@ export const Navbar = () => {
         setIsMenuOpen(false);
     }
 
-
-    return <nav className="bg-gray-950 text-white">
+    return <nav className=" bg-gray-950 text-white">
         <div className="container flex items-center justify-between py-5 relative z-[9999]">
             {/* Logo Section  */}
             <div className="relative z-[-999]">
@@ -54,9 +53,10 @@ export const Navbar = () => {
 
                         return(
                         <li key={link.id}>
-                            <Link className={`${isActive ? "text-red-600 text-xl font-bold hover:text-red-700 hover:rounded-sm" : "text-red-700 hover:text-red-600 hover:rounded-md"}
+                            <a 
+                            className={`${isActive ? "text-red-600 text-xl font-bold hover:text-red-700 hover:rounded-sm" : "text-red-700 hover:text-red-600 hover:rounded-md"}
                             inline-block text-lg py-1 px-4 hover:[box-shadow:0_0_10px_0_rgba(255,0,0,0.8)] hover:bg-red-500 hover:text-white transition-all duration-500 hover:scale-105 hover:rounded-sm
-                            `} href={link.link}>{link.title}</Link>
+                            `} href={link.link}>{link.title}</a>
                         </li>
                     )})}
                 </ul>

@@ -18,7 +18,7 @@ export const ContactForm = () => {
           .then(
             (result) => {
               console.log(result.text);
-              alert("Email sent successfully!");
+              alert("Your Email sent successfully! We will get back to you soon.");
             },
             (error) => {
               console.log(error.text);
@@ -38,14 +38,14 @@ export const ContactForm = () => {
         });
     }
   return (
-    <section className="bg-black text-white">
+    <section id="contacts" className="bg-black text-white scroll">
         <div className="container grid grid-cols-1 md:grid-cols-2">
             {/* Form section */}
             <div className="bg-gradient-to-b from-red-700 via-red-900/70 to-red-950 p-4 rounded-xl m-10">
                 <form onSubmit={handleSubmit} action="">
                     <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
                     <div>
-                        <label htmlFor="name" className="block text-white/60">Name</label>
+                        <label htmlFor="name" className="block text-white">Name</label>
                         <input type="text"
                         name='name'
                         placeholder="Please enter your full name"
@@ -55,21 +55,21 @@ export const ContactForm = () => {
                         />
                     </div>
                     <div>
-                        <label className="block text-white/60" htmlFor="email">Email</label>
+                        <label className="block text-white" htmlFor="email">Email</label>
                         <input type="email"
-                        name='name'
+                        name='email'
                         placeholder="Please enter your email"
-                        value={formData.name}
+                        value={formData.email}
                         onChange={handleChange}
                         className="mt-1 block  text-start w-full rounded-md border-2 border-gray-300 shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 ring-red-700 bg-black sm:text-sm p-2 text-white"
                         />
                     </div>
                     <div>
-                        <label className="block text-white/60" htmlFor="message">Message</label>
+                        <label className="block text-white" htmlFor="message">Message</label>
                         <textarea type="text"
-                        name='name'
+                        name='message'
                         placeholder="Write your message"
-                        value={formData.name}
+                        value={formData.message}
                         onChange={handleChange}
                         className="mt-1 block text-start w-full border-2 rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 ring-red-700 bg-black sm:text-sm p-2 text-white"
                         />

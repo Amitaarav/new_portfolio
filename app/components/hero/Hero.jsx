@@ -19,6 +19,23 @@ const heroText = {
         y: 75,
     },
 }
+
+export const slideUp= (delay) => {
+    return {
+        initial: {
+            opacity: 0,
+            y: 75,
+        },
+    whileInView: {
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            delay: delay,
+            ease: [0.25, 0.1, 0.25, 1.0],
+        },
+    }
+}
+}
 export const Hero = () => {
     return (
         <section style={wallBackground} className=" bg-black text-white">
@@ -27,10 +44,10 @@ export const Hero = () => {
                     {/* Brand info */}
                     <div className="flex flex-col justify-center md:text-left items-center md:items-start ml-20">
                         <div className="text-center md:text-left space-y-6">
-                            <p className="text-4xl">Hello, I'm</p>
-                            <p className="text-5xl font-extrabold lg:text-7xl">Amit Kumar Gupta</p>
-                            <p className="text-gray-300">I'm a Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure. Passionate about building scalable web applications and optimizing deployment pipelines for efficiency.</p>
-                            <button className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">Know More</button>
+                            <motion.p variants={slideUp(0.3)} initial="initial" animate="animate" className="text-4xl">Hello, I'm</motion.p>
+                            <motion.p variants={slideUp(0.4)} initial="initial" whileInView="whileInView" animate="animate" className="text-5xl font-extrabold lg:text-7xl">Amit Kumar Gupta</motion.p>
+                            <motion.p variants={slideUp(0.5)} initial="initial" whileInView="whileInView" animate="animate" className="text-gray-300">I'm a Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure. Passionate about building scalable web applications and optimizing deployment pipelines for efficiency.</motion.p>
+                            <motion.button variants={slideUp(0.6)} initial="initial" whileInView="whileInView" animate="animate" className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">Know More</motion.button>
                             {/* Stats Section */}
                             <div className="flex gap-4">
                                     <div className="flex flex-col items-center bg-gradient-to-b from-red-800 to-gray-900 gap-2 border-2 border-red-900 rounded-xl p-4">
@@ -67,7 +84,7 @@ export const Hero = () => {
                         />
                         
                         <Image
-                            src={HeroImg2}
+                            src={HeroImg1}
                             alt="hero image"
                             className="w-[400px] relative transition duration-300 group-hover:grayscale group-hover:scale-90"
                         />
