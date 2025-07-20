@@ -144,7 +144,7 @@ export const Projects = () => {
     }
     return (
         <section id="projects" className="bg-black text-white scroll">
-            <div className="container py-10 xl:py-20 ">
+            <div className="container py-10 xl:py-24 ">
                 
                     {/* Heading Title */}
                     <div className="relative">
@@ -200,7 +200,7 @@ export const Projects = () => {
                                             </div>
                                             {/* Hidden button section */}
                                             <div className="hidden group-hover:flex justify-around items-center duration-300">
-                                                <button className="border-2 border-white px-4 py-2 rounded-lg font-bold hover:cursor-pointer"
+                                                <button className="bg-green-600 border-2 border-white px-4 py-2 rounded-lg font-bold hover:cursor-pointer"
 
                                                 onClick={() => window.open(project.link, "_blank")}>
                                                     Live

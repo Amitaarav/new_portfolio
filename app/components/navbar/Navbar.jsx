@@ -10,6 +10,7 @@ export const NavLinks = [
   { id: 2, title: "Contact", link: "#contacts" },
   { id: 3, title: "Projects", link: "#projects" },
   { id: 4, title: "Services", link: "#services" },
+  { id: 5, title: "Skills", link: "#skills" },
 ];
 
 export const Navbar = () => {

@@ -1,6 +1,5 @@
 
 import { Navbar } from "./components/navbar/Navbar";
-import dynamic from "next/dynamic";
 import { Banner } from "./components/banner/Banner";
 import { Services } from "./components/services/Services";
 import { Projects } from "./components/projects/Projects";

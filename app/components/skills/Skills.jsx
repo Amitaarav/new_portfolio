@@ -51,7 +51,7 @@ const skills = {
 
 export const Skills = () => {
   return (
-    <section className="py-12 px-4 sm:px-10 bg-black text-white">
+    <section id="skills" className="py-12 px-4 sm:px-10 bg-black text-white">
       <div className="relative">
                         <p className="text-3xl lg:text-4xl mb-30 tracking-widest text-center uppercase font-bold">
                             Skills
