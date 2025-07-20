@@ -1,4 +1,3 @@
-
 export const page = () => {
     return (
         <div>
