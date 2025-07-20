@@ -7,6 +7,7 @@ import { Projects } from "./components/projects/Projects";
 import { ContactForm } from "./components/contactForm/ContactForm";
 import { Footer } from "./components/footer/Footer";
 import { HeroNext } from "./components/hero/HeroNext";
+import { Skills } from "./components/skills/Skills";
 const page = () => {
   return (
     <main>
@@ -15,6 +16,7 @@ const page = () => {
       <Banner />
       <Services />
       <Projects />
+      <Skills />
       <ContactForm />
       <Footer />
     </main>

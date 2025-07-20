@@ -3,6 +3,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { FiDownload } from "react-icons/fi"
 import BannerImg from "../../assets/man2.jpeg"
+import Amit from "../../assets/Amit.png"
 import Grains from "../../assets/grains.png"
 
 const bgGrains = {
@@ -23,7 +24,7 @@ export const Banner = () => {
           {/* Left: Image */}
           <div className="flex justify-center">
             <Image
-              src={BannerImg}
+              src={Amit}
               alt="banner"
               width={400}
               height={500}
