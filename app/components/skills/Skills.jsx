@@ -80,9 +80,9 @@ export const Skills = () => {
                   <motion.div
                     key={name}
                     whileHover={{ scale: 1.08 }}
-                    className="min-w-[150px] bg-gradient-to-r to-red-400 from-red-800   hover:bg-gray-200 text-black p-2 rounded-xl shadow-sm transition-all duration-200 flex flex-col items-center justify-center"
+                    className="min-w-[150px] bg-gradient-to-r to-red-600 from-red-800   hover:bg-gray-200 text-gray-200 p-2 rounded-xl shadow-sm transition-all duration-200 flex flex-col items-center justify-center"
                   >
-                    <div className="text-3xl mb-2 text-orange-600">{icon}</div>
+                    <div className="text-3xl mb-2 text-green-600">{icon}</div>
                     <span className="text-sm font-medium text-center">{name}</span>
                   </motion.div>
                 ))}
