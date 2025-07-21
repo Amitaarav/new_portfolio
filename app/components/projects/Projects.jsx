@@ -207,7 +207,7 @@ export const Projects = () => {
                                                 </button>
                                                 <button className="border-2 border-white px-4 py-2 rounded-lg font-bold hover:cursor-pointer"
 
-                                                onClick={() => window.open(project.link, "_blank")}>
+                                                onClick={() => window.open(project.demo, "_blank")}>
                                                     Demo
                                                 </button>
                                                 <motion.button
