@@ -2,11 +2,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import CountUp from "react-countup";
-import HeroImg2 from "../../assets/new_men.png";
-import HeroImg from "../../assets/red-man.png";
-import HeroImg3 from "../../assets/new_men_nobg.png";
+import HeroImg3 from "../../assets/AmitHeronbg.png";
 import Circle from "../../assets/circle.png";
-import Wall from "../../assets/wall.jpg" // Adjust path accordingly
+import Wall from "../../assets/wall.jpg"
 import { useInView } from "framer-motion"
 import { useRef} from "react"
 
@@ -24,6 +22,23 @@ const countUp = [
     { end: 250, label: "DSA Problems Solved on Leetcode" }
 ]
 
+const text = "Amit Kumar Gupta";
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05, // delay between letters
+    },
+  },
+};
+
+const letter = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export const HeroNext = () => {
     const statRef = countUp.map(() => useRef(null));
     const isInView = statRef.map((ref) => useInView(ref, { once: true }));
@@ -39,9 +54,19 @@ export const HeroNext = () => {
                         className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6"
                     >
                         <p className="text-3xl sm:text-4xl">Hello, I'm</p>
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
-                            Amit Kumar Gupta
-                        </h1>
+                         <motion.h1
+                            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500  font-satisfies"
+                            variants={container}
+                            initial="hidden"
+                            animate="visible"
+                            id="hero-name-text"
+                            >
+                            {text.split("").map((char, index) => (
+                                <motion.span key={index} variants={letter}>
+                                {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                        </motion.h1>
                         <p className="text-gray-300 max-w-lg">
                             A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>

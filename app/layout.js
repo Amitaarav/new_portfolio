@@ -21,6 +21,9 @@ const satisfy = Satisfy({
 export const metadata = {
   title: "Amit Gupta",
   description: "Portfolio Website",
+  icons: {
+    icon: "/amit.ico",
+  },
 };
 
 export default function RootLayout({ children }) {

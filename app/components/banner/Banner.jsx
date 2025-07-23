@@ -2,8 +2,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { FiDownload } from "react-icons/fi"
-import BannerImg from "../../assets/man2.jpeg"
-import Amit from "../../assets/Amit.png"
+import Amit from"../../assets/AmitBanner.jpg"
 import Grains from "../../assets/grains.png"
 
 const bgGrains = {
