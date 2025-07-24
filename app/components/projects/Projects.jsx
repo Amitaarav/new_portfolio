@@ -190,12 +190,13 @@ export const Projects = () => {
                                                     {project.tech}
                                                 </h2>
                                                 <p className="text-md line-clamp-2 text-gray-200">
-                                                    {showMore ? project.desc: `${project.desc.substring(0, 100)}...`}
+                                                    {showMore ? project.desc: `${project.desc.substring(0, 200)}...`}
                                                     <button
                                                     onClick={()=> setShowMore(prev => !prev)}
                                                     >
                                                         { showMore ? 'Show Less' : 'Show More'}
                                                     </button>
+                                 
                                                 </p>
                                             </div>
                                             {/* Hidden button section */}

@@ -38,7 +38,7 @@ export const ContactForm = () => {
         });
     }
   return (
-    <section id="contacts" className="bg-black text-white scroll">
+    <section id="contacts" className="bg-black text-white scroll pt-16">
         <div className="container grid grid-cols-1 md:grid-cols-2">
             {/* Form section */}
             <div className="bg-gradient-to-b from-red-700 via-red-900/70 to-red-950 p-4 rounded-xl m-10">
