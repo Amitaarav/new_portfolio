@@ -83,7 +83,7 @@ const projects = [
     },
     {
         id: 7,
-        title: " Vector Shift workflow automation (Fullstack)",
+        title: " Artistly.com (Frontend)",
         link: "https://artistly-com-abof.vercel.app/",
         demo:"#",
         tech:"Tech: Next.js (App Router), React, Tailwind CSS, shadcn/ui, React Hook Form, Zod, Context API",
