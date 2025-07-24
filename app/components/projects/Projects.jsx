@@ -49,11 +49,11 @@ const projects = [
     },
     {
         id: 4,
-        title:"BlogSphere: Secure Full-Stack Blog Platform (Fullstack)",
-        link: "#",
+        title:"BlogWeb: Secure Full-Stack Blog Platform (Fullstack)",
+        link: "https://blog-web-9ak5.vercel.app/",
         demo:"#",
         tech: "Tech: Hono (Edge), Prisma Accelerate, JWT, React, Vite, Redux, Tailwind CSS",
-        desc: "BlogSphere is a blazing-fast, secure blogging platform built using Cloudflare Workers with the Hono web framework and Prisma Client with Accelerate for edge-optimized data access. It enables seamless authentication, blog publishing, image upload stubs, and protected routes—all integrated with a modular frontend powered by React 18, Redux Toolkit, and Jodit Rich Text Editor.",
+        desc: "BlogWeb is a blazing-fast, secure blogging platform built using Cloudflare Workers with the Hono web framework and Prisma Client with Accelerate for edge-optimized data access. It enables seamless authentication, blog publishing, image upload stubs, and protected routes—all integrated with a modular frontend powered by React 18, Redux Toolkit, and Jodit Rich Text Editor.",
         gitHub:"https://github.com/Amitaarav/BlogWeb",
         image: Blog,
         delay:0.2
