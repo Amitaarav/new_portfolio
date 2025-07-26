@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950 text-white shadow-md border-b border-gray-700 border-opacity-50 border-2">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-5 px-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
         {/* Logo Section */}
         <div className="flex items-center">
           <div className="text-xl bg-green-600 text-white rounded-full w-[50px] h-[50px] flex justify-center items-center font-extrabold">
