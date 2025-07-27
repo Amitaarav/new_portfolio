@@ -9,6 +9,7 @@ import Exchange from "../../assets/projects/Exchange.png"
 import Artistly from "../../assets/projects/Artistly.png"
 import Stream from "../../assets/projects/Stream.png"
 import Vettedge from "../../assets/projects/Vettedge.png"
+import DappA from "../../assets/projects/DappA.png"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -124,7 +125,19 @@ const projects = [
         gitHub: "https://github.com/Amitaarav/skillsCapital",
         image: Vettedge,
         delay: 0.5
+    },
+    {
+    id: 11,
+    title: "Solana Wallet dApp",
+    link: "https://dapp-a.vercel.app/",
+    demo: "#",
+    tech: "Tech: React, Tailwind CSS, Solana Wallet Adapter, Solana Web3.js, Ed25519 (noble-curves)",
+    desc: "Built a full-featured Solana Web3 dApp that enables wallet connection, requesting test SOL via airdrop, checking wallet balance, sending tokens, and signing messages. Integrated Wallet Adapter for multi-wallet support with autoConnect, built reusable, styled components using Tailwind and implemented SOL transfer and message signing with on-chain transaction logic. Fully functional on Devnet and optimized for wallet-based workflows.",
+    gitHub: "https://github.com/Amitaarav/DappA",
+    image: DappA,
+    delay: 0.4
     }
+
     
 ]
 export const Projects = () => {
