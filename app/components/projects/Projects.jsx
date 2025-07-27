@@ -50,11 +50,11 @@ const projects = [
     },
     {
         id: 4,
-        title:"BlogWeb: Secure Full-Stack Blog Platform (Fullstack)",
-        link: "https://blog-web-9ak5.vercel.app/",
+        title:"BlogSphere: Secure Full-Stack Blog Platform (Fullstack)",
+        link: "#",
         demo:"#",
         tech: "Tech: Hono (Edge), Prisma Accelerate, JWT, React, Vite, Redux, Tailwind CSS",
-        desc: "BlogWeb is a blazing-fast, secure blogging platform built using Cloudflare Workers with the Hono web framework and Prisma Client with Accelerate for edge-optimized data access. It enables seamless authentication, blog publishing, image upload stubs, and protected routes—all integrated with a modular frontend powered by React 18, Redux Toolkit, and Jodit Rich Text Editor.",
+        desc: "BlogSphere is a blazing-fast, secure blogging platform built using Cloudflare Workers with the Hono web framework and Prisma Client with Accelerate for edge-optimized data access. It enables seamless authentication, blog publishing, image upload stubs, and protected routes—all integrated with a modular frontend powered by React 18, Redux Toolkit, and Jodit Rich Text Editor.",
         gitHub:"https://github.com/Amitaarav/BlogWeb",
         image: Blog,
         delay:0.2
@@ -242,13 +242,5 @@ export const Projects = () => {
             </div>
         </section>
     )
-<<<<<<< HEAD
-}
-=======
 
 }
-
-const ProjectCard = () => {
-    
-}
->>>>>>> be354ff (navbar updated)
