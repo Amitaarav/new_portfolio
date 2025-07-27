@@ -229,4 +229,13 @@ export const Projects = () => {
             </div>
         </section>
     )
+<<<<<<< HEAD
 }
+=======
+
+}
+
+const ProjectCard = () => {
+    
+}
+>>>>>>> be354ff (navbar updated)
