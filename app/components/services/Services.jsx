@@ -56,7 +56,7 @@ export const Services = () => {
             {/* Left: Description */}
             <div className="space-y-8 max-w-xl">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">Services</h1>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">
+              <p className="text-white/70 text-base md:text-lg leading-relaxed text-justify">
                 I’m a Full-Stack Developer from NIT Calicut with a strong focus on backend-heavy systems. I specialize in building scalable web platforms using TypeScript, Next.js, PostgreSQL, Redis, and Kafka. My work revolves around architecting real-time data pipelines, automation workflows, and high-performance APIs.
                 Whether it’s handling 500K+ daily events or designing secure, cloud-native infrastructure, I bring clean code, low-latency execution, and system reliability to the core of every project.
               </p>

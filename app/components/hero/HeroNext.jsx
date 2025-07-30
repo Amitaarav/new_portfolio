@@ -7,7 +7,7 @@ import Circle from "../../assets/circle.png";
 import Wall from "../../assets/wall.jpg"
 import { useInView } from "framer-motion"
 import { useRef} from "react"
-
+import { LinkSection } from "./LinkSection";
 const wallBackground = {
     backgroundImage: `url(${Wall.src})`,
     backgroundSize: "cover",
@@ -70,6 +70,8 @@ export const HeroNext = () => {
                         <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg">
                             A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>
+
+                        <LinkSection />
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

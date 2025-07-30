@@ -39,9 +39,14 @@ export const ContactForm = () => {
     }
   return (
     <section id="contacts" className="bg-black text-white scroll pt-16">
+        <div className="">
+                    <h1 className="text-5xl font-bold text-center pb-4">Good ideas deserve great execution.</h1>
+                    <h2 className="text-center text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-red-600 to-red-400 ">Let’s start with yours.!</h2>
+        </div>
         <div className="container grid grid-cols-1 md:grid-cols-2">
             {/* Form section */}
             <div className="bg-gradient-to-b from-red-700 via-red-900/70 to-red-950 p-4 rounded-xl m-10">
+
                 <form onSubmit={handleSubmit} action="">
                     <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
                     <div>
@@ -82,11 +87,11 @@ export const ContactForm = () => {
                 </form>
             </div>
             {/* Image section */}
-            <div className="hidden md:flex justify-center item-center">
+            <div className="hidden md:flex justify-center item-center max-h-full">
                 <Image
                     src={SendingEmailImg}
                     alt="send-email"
-                    className="w-[300px] hover:animate-bounce animate-none duration-300"
+                    className="w-[300px] hover:animate-bounce duration-300 transition-all"
                 />
             </div>
         </div>
