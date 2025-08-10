@@ -67,7 +67,7 @@ export const HeroNext = () => {
                                 </motion.span>
                             ))}
                         </motion.h1>
-                        <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg">
+                        <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg text-justify">
                             A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>
 

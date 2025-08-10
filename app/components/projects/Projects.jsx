@@ -10,6 +10,7 @@ import Artistly from "../../assets/projects/Artistly.png"
 import Stream from "../../assets/projects/Stream.png"
 import Vettedge from "../../assets/projects/Vettedge.png"
 import DappA from "../../assets/projects/DappA.png"
+import MiniNUA from "../../assets/projects/MiniNUA.png"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -127,16 +128,28 @@ const projects = [
         delay: 0.5
     },
     {
-    id: 11,
-    title: "Solana Wallet dApp",
-    link: "https://dapp-a.vercel.app/",
-    demo: "#",
-    tech: "Tech: React, Tailwind CSS, Solana Wallet Adapter, Solana Web3.js, Ed25519 (noble-curves)",
-    desc: "Built a full-featured Solana Web3 dApp that enables wallet connection, requesting test SOL via airdrop, checking wallet balance, sending tokens, and signing messages. Integrated Wallet Adapter for multi-wallet support with autoConnect, built reusable, styled components using Tailwind and implemented SOL transfer and message signing with on-chain transaction logic. Fully functional on Devnet and optimized for wallet-based workflows.",
-    gitHub: "https://github.com/Amitaarav/DappA",
-    image: DappA,
-    delay: 0.4
-    }
+        id: 11,
+        title: "Solana Wallet dApp",
+        link: "https://dapp-a.vercel.app/",
+        demo: "#",
+        tech: "Tech: React, Tailwind CSS, Solana Wallet Adapter, Solana Web3.js, Ed25519 (noble-curves)",
+        desc: "Built a full-featured Solana Web3 dApp that enables wallet connection, requesting test SOL via airdrop, checking wallet balance, sending tokens, and signing messages. Integrated Wallet Adapter for multi-wallet support with autoConnect, built reusable, styled components using Tailwind and implemented SOL transfer and message signing with on-chain transaction logic. Fully functional on Devnet and optimized for wallet-based workflows.",
+        gitHub: "https://github.com/Amitaarav/DappA",
+        image: DappA,
+        delay: 0.4
+    },
+    {
+        id: 12,
+        title: "MiniNUA — Mini E-commerce SPA",
+        link: "https://mini-nua.vercel.app/",
+        demo: "#",
+        tech: "Tech: React 19, TypeScript 5, Vite 7, Redux Toolkit, Tailwind CSS 4, React Router DOM 7, Lucide Icons, Embla Carousel",
+        desc: "A responsive, single-page e-commerce application consuming the Fake Store API. Features include category-based search, sorting, product detail pages, a persistent shopping cart, and a validated checkout flow. Implements Redux Toolkit for global state, localStorage-based caching for fast revisits, and skeleton loaders for improved UX. Designed with accessible navigation, keyboard support, and responsive layouts across devices.",
+        gitHub: "https://github.com/Amitaarav/MiniNUA",
+        image: MiniNUA,
+        delay: 0.3
+}
+
 
     
 ]
