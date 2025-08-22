@@ -7,6 +7,7 @@ import { ContactForm } from "./components/contactForm/ContactForm";
 import { Footer } from "./components/footer/Footer";
 import { HeroNext } from "./components/hero/HeroNext";
 import { Skills } from "./components/skills/Skills";
+// import { ProjectSwipCard } from "./components/projects/ProjectSwipCard";
 const page = () => {
   return (
     <main>
@@ -14,6 +15,7 @@ const page = () => {
       <HeroNext />
       <Banner />
       <Services />
+      {/* <ProjectSwipCard/> */}
       <Projects />
       <Skills />
       <ContactForm />
@@ -21,5 +23,4 @@ const page = () => {
     </main>
   )
 }
-
 export default page;
