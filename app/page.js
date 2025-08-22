@@ -7,6 +7,7 @@ import { ContactForm } from "./components/contactForm/ContactForm";
 import { Footer } from "./components/footer/Footer";
 import { HeroNext } from "./components/hero/HeroNext";
 import { Skills } from "./components/skills/Skills";
+import { ProjectCaousel } from "./components/projects/ProjectCaousel";
 // import { ProjectSwipCard } from "./components/projects/ProjectSwipCard";
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <Services />
       {/* <ProjectSwipCard/> */}
       <Projects />
+      <ProjectCaousel />
       <Skills />
       <ContactForm />
       <Footer />

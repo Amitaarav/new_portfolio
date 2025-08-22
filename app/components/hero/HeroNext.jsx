@@ -6,7 +6,7 @@ import HeroImg3 from "../../assets/AmitHeronbg.png";
 import Circle from "../../assets/circle.png";
 import Wall from "../../assets/wall.jpg"
 import { useInView } from "framer-motion"
-import { useRef} from "react"
+import { useState, useRef, useEffect} from "react"
 import { LinkSection } from "./LinkSection";
 const wallBackground = {
     backgroundImage: `url(${Wall.src})`,
@@ -39,9 +39,24 @@ const letter = {
   visible: { opacity: 1, y: 0 },
 };
 
+const profileDesc = [
+    "A Full-Stack Developer specializing",  "in the MERN stack & Next.js, ", "with a keen interest in Web3, blockchain (Solana)", "and smart contracts", "alongside DevOps, CI/CD ,automation", "and cloud infrastructure.", "Passionate about building"," scalable web applications," ,"and optimizing ","deployment pipelines for efficiency."
+]
 export const HeroNext = () => {
     const statRef = countUp.map(() => useRef(null));
+    const [fadeIn, setFadeIn] = useState(true);
+    const [phraseIndex, setPhraseIndex] = useState(0);
     const isInView = statRef.map((ref) => useInView(ref, { once: true }));
+    useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeIn(false);
+      setTimeout(() => {
+        setPhraseIndex((prevIndex) => (prevIndex + 1) % profileDesc.length);
+        setFadeIn(true);
+      }, 500); // Change this to match the duration of the fade out animation
+    }, 5000); 
+    return () => clearInterval(interval);
+  }, [phraseIndex]);
     return (
         <section style={wallBackground} className="bg-black text-white overflow-hidden">
             <div className="bg-gradient-to-r from-red-900/50 to-gray-950">
@@ -61,16 +76,19 @@ export const HeroNext = () => {
                             animate="visible"
                             id="hero-name-text"
                             >
-                            {text.split("").map((char, index) => (
-                                <motion.span key={index} variants={letter}>
-                                {char === " " ? "\u00A0" : char}
-                                </motion.span>
+                            {typeof text === "string" &&
+                                text.split("").map((char, index) => (
+                                    <motion.span key={index} variants={letter}>
+                                    {char === " " ? "\u00A0" : char}
+                                    </motion.span>
                             ))}
                         </motion.h1>
                         <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg text-justify">
-                            A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in DevOps, CI/CD, automation, and cloud infrastructure.
+                            A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in Web3, blockchain (Solana), and smart contracts, alongside DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>
-
+                        <p className={`typewriter text-purple-400 text-4xl font-semibold text-left ml-4 mr-5 ${fadeIn ? 'fade-in' : 'fade-out'}`} key={phraseIndex}>
+                            {profileDesc[phraseIndex]}
+                        </p>
                         <LinkSection />
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -111,24 +129,24 @@ export const HeroNext = () => {
                         className="flex justify-center items-center mt-10 md:mt-0 relative"
                     >
                         <div className="p-[2px] rounded-3xl bg-gradient-to-r from-red-800 via-red-900 to-gray-900 bg-[length:400%_400%] animate-shine">
-  <div className="bg-black rounded-3xl overflow-hidden h-[500px] sm:h-[600px] flex items-end relative group shadow-red transition-transform duration-700 hover:scale-105">
-    
-    {/* Spinning circle */}
-    <Image
-      src={Circle}
-      alt="circle"
-      className="absolute w-[300px] sm:w-[500px] -top-4 left-1/2 -translate-x-1/2 -z-10 animate-spin group-hover:animate-pulse  transition duration-300"
-    />
-    
-    {/* Hero image */}
-    <Image
-      src={HeroImg3}
-      alt="hero image"
-      className="w-[400px] sm:w-[500px] transition duration-300 group-hover:grayscale group-hover:scale-90"
-    />
+                            <div className="bg-black rounded-3xl overflow-hidden h-[500px] sm:h-[600px] flex items-end relative group shadow-red transition-transform duration-700 hover:scale-105">
+                                
+                                {/* Spinning circle */}
+                                <Image
+                                src={Circle}
+                                alt="circle"
+                                className="absolute w-[300px] sm:w-[500px] -top-4 left-1/2 -translate-x-1/2 -z-10 animate-spin group-hover:animate-pulse  transition duration-300"
+                                />
+                                
+                                {/* Hero image */}
+                                <Image
+                                src={HeroImg3}
+                                alt="hero image"
+                                className="w-[400px] sm:w-[500px] transition duration-300 group-hover:grayscale group-hover:scale-90"
+                                />
 
-  </div>
-</div>
+                            </div>
+                            </div>
 
                     </motion.div>
                 </div>

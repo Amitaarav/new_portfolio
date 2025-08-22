@@ -63,6 +63,25 @@ body {
   scrollbar-width: none;     /* Firefox */
 }
 
+.typewriter {
+  border-right: 0px solid;
+  width: 100%;
+  white-space: normal;
+  overflow: hidden;
+  animation: typing 2s steps(40), cursor .4s step-end infinite alternate;
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

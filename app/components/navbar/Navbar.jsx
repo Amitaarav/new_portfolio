@@ -25,7 +25,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
         {/* Logo Section */}
         <div className="flex items-center">
-          <div className="text-xl bg-green-600 text-white rounded-full w-[50px] h-[50px] flex justify-center items-center font-extrabold">
+          <div className="text-xl bg-red-600 text-white rounded-full w-[50px] h-[50px] flex justify-center items-center font-extrabold">
             P
           </div>
           <h1 className="font-satisfies text-xl font-bold ml-2">ortfolio.</h1>
@@ -61,7 +61,7 @@ export const Navbar = () => {
               "https://drive.google.com/file/d/1ZlV9aFlcBoDsy6EIpivG6v_BJ8hEaVuJ/view?usp=sharing"
             )
           }
-          className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 gradient-to-r from-green-600 via-green-700 to-green-800 cursor-pointer hover:scale-105 mr-4 hidden sm:inline-block"
+          className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 gradient-to-r from-green-600 via-green-700 to-green-800 cursor-pointer hover:scale-105 mr-4 hidden sm:inline-block"
         >
           Get Resume
         </button>

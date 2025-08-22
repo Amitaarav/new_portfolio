@@ -34,7 +34,7 @@ export const Projects = () => {
                         </p>
                     </div>
 
-                    <div className="flex justify-between items-center mb-4 px-6">
+                    {/* <div className="flex justify-between items-center mb-4 px-6">
                         <button onClick={() => scroll("left")}>
                             <ChevronLeft className="w-12 h-12 text-red-500 hover:scale-110 transition" />
                         </button>
@@ -42,7 +42,7 @@ export const Projects = () => {
                         <button onClick={() => scroll("right")}>
                             <ChevronRight className="w-12 h-12 text-red-500 hover:scale-110 transition" />
                         </button>
-                    </div>
+                    </div> */}
 
                     {/* Emmet Abriviation */}
                         <div 
