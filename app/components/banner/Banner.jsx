@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { FiDownload } from "react-icons/fi"
 import Amit from"../../assets/AmitBanner.jpg"
 import Grains from "../../assets/grains.png"
-
+import { BackgroundBeams } from "@/components/ui/background-beams"
 const bgGrains = {
   backgroundImage: `url(${Grains.src})`,
   backgroundSize: "cover",
@@ -63,6 +63,7 @@ export const Banner = () => {
           </div>
         </div>
       </div>
+      <BackgroundBeams />
     </section>
   )
 }

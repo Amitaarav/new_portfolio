@@ -8,6 +8,7 @@ import Wall from "../../assets/wall.jpg"
 import { useInView } from "framer-motion"
 import { useState, useRef, useEffect} from "react"
 import { LinkSection } from "./LinkSection";
+import { BackgroundBeams } from "@/components/ui/background-beams"
 const wallBackground = {
     backgroundImage: `url(${Wall.src})`,
     backgroundSize: "cover",
@@ -68,7 +69,7 @@ export const HeroNext = () => {
                         transition={{ duration: 1 }}
                         className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6"
                     >
-                        <p className="text-3xl sm:text-4xl pt-10">Hello, I'm</p>
+                        <p className="text-3xl sm:text-4xl font-extrabold pt-10">Hello, I'm</p>
                          <motion.h1
                             className="text-4xl sm:text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500  font-satisfies"
                             variants={container}
@@ -150,6 +151,7 @@ export const HeroNext = () => {
                     </motion.div>
                 </div>
             </div>
+            <BackgroundBeams />
         </section>
     );
 };
