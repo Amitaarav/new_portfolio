@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { FiDownload } from "react-icons/fi"
 import Amit from"../../assets/AmitBanner.jpg"
 import Grains from "../../assets/grains.png"
+import { CardItem, CardBody, CardContainer} from "../../../components/ui/3d-card"
 import { BackgroundBeams } from "@/components/ui/background-beams"
 const bgGrains = {
   backgroundImage: `url(${Grains.src})`,
@@ -21,15 +22,21 @@ export const Banner = () => {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-8 md:p-12">
           {/* Left: Image */}
-          <div className="flex justify-center">
-            <Image
-              src={Amit}
-              alt="banner"
-              width={400}
-              height={500}
-              className="rounded-xl border-2 border-gray-700 shadow-lg hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+          
+            <CardContainer>
+              <CardBody className="bg-gray-800 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl border">
+                <CardItem translateZ="100" className="w-full">
+                  <Image
+                    src={Amit}
+                    alt="banner"
+                    width={400}
+                    height={500}
+                    className="h-140 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  />
+                </CardItem>
+              </CardBody>
+            </CardContainer>
+          
 
           {/* Banner info */}
           <div className="space-y-6 text-left max-w-xl">
