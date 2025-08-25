@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react"
 import { motion } from "framer-motion"
-
 const DURATION = 0.25
 const STAGGER = 0.025
 

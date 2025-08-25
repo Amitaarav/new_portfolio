@@ -41,20 +41,10 @@ export const LinkSection = () => {
     <section className=" text-white">
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 flex-wrap">
         {links.map(({ link, label, icon, color }) => (
-          // <Link
-          //   key={label}
-          //   href={link}
-          //   onClick={onClickHandler(link)}
-          //   target="_blank"
-          //   rel="noopener noreferrer"
-          //   aria-label={label}
-          //   className={`flex items-center gap-2 ${color} text-gray-100 font-medium py-2 px-4 rounded-md transition duration-300`}
-          // >
-          //   {icon}
-          //   {label}
-          // </Link>
-          <div className="bgradient-to-r from-gray-900 to-red-800 p-[2px] rounded-md hover:scale-105 transition-transform duration-300" key={label}>
-            <FlipLink href={link}>{label}</FlipLink>
+          <div className="bg-gradient-to-r from-gray-900 to-red-800 p-[8px] rounded-md hover:scale-115 transition-transform duration-300 border-2 border-red-900" key={label}>
+            <FlipLink href={link}>
+              {label}
+            </FlipLink>
           </div>
         ))}
       </div>

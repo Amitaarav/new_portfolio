@@ -82,13 +82,12 @@ export const HeroNext = () => {
                                     {char === " " ? "\u00A0" : char}
                                     </motion.span>
                             ))}
+
                         </motion.h1>
                         <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg text-justify">
                             A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in Web3, blockchain (Solana), and smart contracts, alongside DevOps, CI/CD, automation, and cloud infrastructure.
                         </p>
-                        <p className={`typewriter text-purple-400 text-4xl font-semibold text-left ml-4 mr-5 ${fadeIn ? 'fade-in' : 'fade-out'}`} key={phraseIndex}>
-                            {profileDesc[phraseIndex]}
-                        </p>
+                        
                         <LinkSection />
                         <motion.button
                             whileHover={{ scale: 1.05 }}
