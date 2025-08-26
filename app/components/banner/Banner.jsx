@@ -31,7 +31,7 @@ export const Banner = () => {
                     alt="banner"
                     width={400}
                     height={500}
-                    className="h-140 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    className="h-120 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                   />
                 </CardItem>
               </CardBody>

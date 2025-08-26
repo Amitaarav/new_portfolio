@@ -26,9 +26,9 @@ export const Navbar = () => {
         {/* Logo Section */}
         <div className="flex items-center">
           <div className="text-xl bg-red-600 text-white rounded-full w-[50px] h-[50px] flex justify-center items-center font-extrabold">
-            P
+            A
           </div>
-          <h1 className="font-satisfies text-xl font-bold ml-2">ortfolio.</h1>
+          <h1 className="font-satisfies text-xl font-bold ml-2">mit Gupta.</h1>
         </div>
 
         {/* Nav Links */}
