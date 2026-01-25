@@ -4,13 +4,15 @@ import { usePathname } from "next/navigation";
 import { IoMenuSharp } from "react-icons/io5";
 import { useState } from "react";
 import { ResponsiveMenu } from "./ResponsiveMenu";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export const NavLinks = [
   { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "Contact", link: "#contacts" },
-  { id: 3, title: "Projects", link: "#projects" },
-  { id: 4, title: "Services", link: "#services" },
+  { id: 2, title: "Services", link: "#services" },
+  { id: 3, title: "Experience", link: "#experience" },
+  { id: 4, title: "Projects", link: "#projects" },
   { id: 5, title: "Skills", link: "#skills" },
+  { id: 6, title: "Contact", link: "#contacts" },
 ];
 
 export const Navbar = () => {
@@ -40,11 +42,10 @@ export const Navbar = () => {
                 <li key={link.id}>
                   <a
                     href={link.link}
-                    className={`${
-                      isActive
-                        ? "text-red-600 text-xl font-bold"
-                        : "text-red-700"
-                    } inline-block text-lg py-1 px-4 hover:[box-shadow:0_0_10px_0_rgba(255,0,0,0.8)] hover:bg-red-500 hover:text-white transition-all duration-500 hover:scale-105 hover:rounded-sm`}
+                    className={`${isActive
+                      ? "text-red-600 text-xl font-bold"
+                      : "text-red-700"
+                      } inline-block text-lg py-1 px-4 hover:[box-shadow:0_0_10px_0_rgba(255,0,0,0.8)] hover:bg-red-500 hover:text-white transition-all duration-500 hover:scale-105 hover:rounded-sm`}
                   >
                     {link.title}
                   </a>
@@ -54,17 +55,20 @@ export const Navbar = () => {
           </ul>
         </div>
 
-        {/* Resume Button */}
-        <button
-          onClick={() =>
-            window.open(
-              "https://drive.google.com/file/d/1ZlV9aFlcBoDsy6EIpivG6v_BJ8hEaVuJ/view?usp=sharing"
-            )
-          }
-          className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 gradient-to-r from-green-600 via-green-700 to-green-800 cursor-pointer hover:scale-105 mr-4 hidden sm:inline-block"
-        >
-          Get Resume
-        </button>
+        {/* Theme Toggle & Resume Button */}
+        <div className="hidden sm:flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={() =>
+              window.open(
+              "https://drive.google.com/file/d/1TfBWWerakNOgpbR3HF2sknR65U2Enc5Q/view?usp=sharing"
+              )
+            }
+            className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 cursor-pointer hover:scale-105"
+          >
+            Get Resume
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <div className="md:hidden">
