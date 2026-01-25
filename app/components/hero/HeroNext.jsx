@@ -6,42 +6,50 @@ import HeroImg3 from "../../assets/AmitHeronbg.png";
 import Circle from "../../assets/circle.png";
 import Wall from "../../assets/wall.jpg"
 import { useInView } from "framer-motion"
-import { useState, useRef, useEffect} from "react"
+import { useState, useRef, useEffect } from "react"
 import { LinkSection } from "./LinkSection";
 import { BackgroundBeams } from "@/components/ui/background-beams"
+
 const wallBackground = {
     backgroundImage: `url(${Wall.src})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundOpacity: 0.5,   
+    backgroundOpacity: 0.5,
 }
 
 const countUp = [
-    { end: 20, label: "Projects Completed" },
-    { end: 100, label: "Commits in 2024" },
-    { end: 250, label: "DSA Problems Solved on Leetcode" }
+    { end: 25, label: "Projects Completed" },
+    { end: 200, label: "Commits in 2025" },
+    { end: 400, label: "DSA Problems Solved" }
 ]
 
 const text = "Amit Kumar Gupta";
 
 const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05, // delay between letters
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05, // delay between letters
+        },
     },
-  },
 };
 
 const letter = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
 };
 
 const profileDesc = [
-    "A Full-Stack Developer specializing",  "in the MERN stack & Next.js, ", "with a keen interest in Web3, blockchain (Solana)", "and smart contracts", "alongside DevOps, CI/CD ,automation", "and cloud infrastructure.", "Passionate about building"," scalable web applications," ,"and optimizing ","deployment pipelines for efficiency."
+    "Full-Stack Developer specializing",
+    "in Modern web, MERN & Next.js.",
+    "Web3 & Blockchain Enthusiast",
+    "building on Solana.",
+    "DevOps & Automation Expert",
+    "optimizing cloud infra.",
+    "Passionate about building",
+    "scalable, high-performance systems."
 ]
 export const HeroNext = () => {
     const statRef = countUp.map(() => useRef(null));
@@ -49,15 +57,16 @@ export const HeroNext = () => {
     const [phraseIndex, setPhraseIndex] = useState(0);
     const isInView = statRef.map((ref) => useInView(ref, { once: true }));
     useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeIn(false);
-      setTimeout(() => {
-        setPhraseIndex((prevIndex) => (prevIndex + 1) % profileDesc.length);
-        setFadeIn(true);
-      }, 500); // Change this to match the duration of the fade out animation
-    }, 5000); 
-    return () => clearInterval(interval);
-  }, [phraseIndex]);
+        const interval = setInterval(() => {
+            setFadeIn(false);
+            setTimeout(() => {
+                setPhraseIndex((prevIndex) => (prevIndex + 1) % profileDesc.length);
+                setFadeIn(true);
+            }, 500); // Change this to match the duration of the fade out animation
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [phraseIndex]);
+
     return (
         <section style={wallBackground} className="bg-black text-white overflow-hidden">
             <div className="bg-gradient-to-r from-red-900/50 to-gray-950">
@@ -70,30 +79,34 @@ export const HeroNext = () => {
                         className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6"
                     >
                         <p className="text-3xl sm:text-4xl font-extrabold pt-10">Hello, I'm</p>
-                         <motion.h1
+                        <motion.h1
                             className="text-4xl sm:text-5xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500  font-satisfies"
                             variants={container}
                             initial="hidden"
                             animate="visible"
                             id="hero-name-text"
-                            >
+                        >
                             {typeof text === "string" &&
                                 text.split("").map((char, index) => (
                                     <motion.span key={index} variants={letter}>
-                                    {char === " " ? "\u00A0" : char}
+                                        {char === " " ? "\u00A0" : char}
                                     </motion.span>
-                            ))}
+                                ))}
 
                         </motion.h1>
                         <p className="text-gray-300 max-w-lg flex flex-col items-center md:items-start text-lg text-justify">
-                            A Full-Stack Developer specializing in the MERN stack & Next.js, with a keen interest in Web3, blockchain (Solana), and smart contracts, alongside DevOps, CI/CD, automation, and cloud infrastructure.
+                            Full-Stack Developer specializing in MERN & Next.js, with expertise in Web3 (Solana) and Cloud Infrastructure. Passionate about engineering scalable, automated, and secure digital ecosystems.
                         </p>
-                        
-                        <LinkSection />
+
+                        <div className="bg-gray-900 border-2 border-red-900 rounded-xl p-4 relative z-20">
+                            <LinkSection />
+                        </div>
+
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-6 py-3 rounded-md transition-all duration-300"
+                            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 cursor-pointer"
                         >
                             Know More
                         </motion.button>
@@ -109,11 +122,11 @@ export const HeroNext = () => {
                                 >
                                     <p className="text-3xl font-bold">
                                         {isInView && (
-                                                <CountUp end={stat.end} start={0} suffix="+" delay={0.3} enableScrollSpy scrollSpyOnce>
-                                                {({countUpRef}) => <span ref={countUpRef}/>}    
-                                                 </CountUp>
+                                            <CountUp end={stat.end} start={0} suffix="+" delay={0.3} enableScrollSpy scrollSpyOnce>
+                                                {({ countUpRef }) => <span ref={countUpRef} />}
+                                            </CountUp>
                                         )}
-                                        
+
                                     </p>
                                     <p className="text-gray-300 text-sm text-center">{stat.label}</p>
                                 </motion.div>
@@ -130,23 +143,23 @@ export const HeroNext = () => {
                     >
                         <div className="p-[2px] rounded-3xl bg-gradient-to-r from-red-800 via-red-900 to-gray-900 bg-[length:400%_400%] animate-shine">
                             <div className="bg-black rounded-3xl overflow-hidden h-[500px] sm:h-[600px] flex items-end relative group shadow-red transition-transform duration-700 hover:scale-105">
-                                
+
                                 {/* Spinning circle */}
                                 <Image
-                                src={Circle}
-                                alt="circle"
-                                className="absolute w-[300px] sm:w-[500px] -top-4 left-1/2 -translate-x-1/2 -z-10 animate-spin group-hover:animate-pulse  transition duration-300"
+                                    src={Circle}
+                                    alt="circle"
+                                    className="absolute w-[300px] sm:w-[500px] -top-4 left-1/2 -translate-x-1/2 -z-10 animate-spin group-hover:animate-pulse  transition duration-300"
                                 />
-                                
+
                                 {/* Hero image */}
                                 <Image
-                                src={HeroImg3}
-                                alt="hero image"
-                                className="w-[400px] sm:w-[500px] transition duration-300 group-hover:grayscale group-hover:scale-90"
+                                    src={HeroImg3}
+                                    alt="hero image"
+                                    className="w-[400px] sm:w-[500px] transition duration-300 group-hover:grayscale group-hover:scale-90"
                                 />
 
                             </div>
-                            </div>
+                        </div>
 
                     </motion.div>
                 </div>

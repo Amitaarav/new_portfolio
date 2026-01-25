@@ -20,28 +20,28 @@ const ServicesData = [
     id: 1,
     title: "Full-Stack Web Development",
     icon: <RiCodeBoxLine className="text-3xl" />,
-    desc: "Built responsive full-stack apps using Next.js, TypeScript, PostgreSQL, and Redis. Delivered scalable UIs and optimized performance with SSR/SSG and state management via Redux.",
+    desc: "End-to-end development of scalable web platforms using Next.js and TypeScript. Specializing in high-performance responsive UIs, server-side rendering strategies, and robust state management.",
     delay: 0.2,
   },
   {
     id: 2,
     title: "Backend Engineering",
     icon: <TbServerBolt className="text-3xl" />,
-    desc: "Engineered low-latency backends with Node.js, Express, Kafka, Redis and Prisma. Built REST APIs, WebSocket services, WebRTC, and database systems that scaled to 500K+ daily events.",
+    desc: "Architecting low-latency backend systems with Node.js, Go and Redis. Proficient in designing RESTful and GraphQL APIs, WebSocket services, and atomic transaction systems handling massive scale.",
     delay: 0.4,
   },
   {
     id: 3,
     title: "DevOps & Cloud Infrastructure",
     icon: <HiOutlineCloud className="text-3xl" />,
-    desc: "Proficient in Docker, AWS, Kubernetes, Linux and CI/CD. Designed resilient systems with 99.99% uptime and containerized microservices with secure deployments.",
+    desc: "Implementing secure CI/CD pipelines and container orchestration with Docker and Kubernetes. Expertise in AWS cloud architecture, automated deployments, and infrastructure as code.",
     delay: 0.6,
   },
   {
     id: 4,
-    title: "Software Engineering at Scale",
+    title: "System Architecture & Scale",
     icon: <LuWorkflow className="text-3xl" />,
-    desc: "Skilled in building event-driven platforms and automation systems with Kafka, Redis(Pub/Sub), WebSockets and PostgreSQL. Delivered systems that process 100K+ events/day with 99.99% uptime reliably.",
+    desc: "Designing resilient event-driven architectures using Kafka and Pub/Sub patterns. Focused on system reliability, fault tolerance, and optimizing data throughput for real-time applications process 100K+ daily events.",
     delay: 0.8,
   },
 ];
@@ -57,27 +57,30 @@ export const Services = () => {
             <div className="space-y-8 max-w-xl">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">Services</h1>
               <p className="text-white/70 text-base md:text-lg leading-relaxed text-justify">
-                I’m a Full-Stack Developer from NIT Calicut with a strong focus on backend-heavy systems. I specialize in building scalable web platforms using TypeScript, Next.js, PostgreSQL, Redis, and Kafka. My work revolves around architecting real-time data pipelines, automation workflows, and high-performance APIs.
-                Whether it’s handling 500K+ daily events or designing secure, cloud-native infrastructure, I bring clean code, low-latency execution, and system reliability to the core of every project.
+                Leveraging deep expertise in Full-Stack engineering to build robust digital solutions. From architecting diverse real-time systems to optimizing cloud infrastructure, I deliver code that scales. My core focus remains on system performance, security, and maintainability—ensuring your platform is built for growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-black font-semibold px-6 py-3 rounded-md shadow"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-black font-semibold px-6 py-3 rounded-md shadow cursor-pointer"
                 >
                   Know More
                 </motion.button>
-                <motion.button
+                <motion.a
+                  href="/Amit_Gupta_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white font-semibold px-6 py-3 rounded-md"
+                  className="border-2 border-white text-white font-semibold px-6 py-3 rounded-md cursor-pointer inline-block"
                 >
                   <div className="flex items-center gap-2">
                     <FiDownload className="text-lg" />
                     Download CV
                   </div>
-                </motion.button>
+                </motion.a>
               </div>
             </div>
 
