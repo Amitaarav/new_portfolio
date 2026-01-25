@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { FiDownload } from "react-icons/fi"
-import Amit from "../../assets/AmitBanner.jpg"
+import Amit from "../../assets/Amit_Gupta.jpeg"
 import Grains from "../../assets/grains.png"
 import { CardItem, CardBody, CardContainer } from "../../../components/ui/3d-card"
 import { BackgroundBeams } from "@/components/ui/background-beams"

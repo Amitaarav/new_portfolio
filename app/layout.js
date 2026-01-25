@@ -3,6 +3,7 @@ import { Satisfy } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
 import { PageLoader } from "./components/loader/PageLoader";
+import Cursor from "./components/cursor/Cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider>
           <PageLoader />
+          <Cursor />
           {children}
         </ThemeProvider>
       </body>
