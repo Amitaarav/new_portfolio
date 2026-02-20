@@ -12,7 +12,7 @@ export const ProjectCarousel = () => {
                 Featured Work
               </p>
               <p className="text-5xl lg:text-8xl text-white/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 uppercase font-extrabold whitespace-nowrap">
-                Portfolio
+                Featured Work
               </p>
             </div>
             <p className="text-center text-gray-400 mt-4 max-w-2xl mx-auto">
