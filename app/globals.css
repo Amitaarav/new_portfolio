@@ -86,11 +86,11 @@ body {
   animation: typing 2s steps(40), cursor .4s step-end infinite alternate;
 }
 
-/* @keyframes cursor {
+@keyframes cursor {
   50% {
     border-color: transparent;
   }
-} */
+}
 
 @keyframes typing {
   from {
