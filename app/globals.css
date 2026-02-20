@@ -16,11 +16,11 @@ body {
   /* Light text color */
 }
 
-/* @media (pointer: fine) {
+@media (pointer: fine) {
   body {
-    cursor: none;
+    cursor: default;
   }
-} */
+}
 
 @layer utilities {
   .red-shadow {
