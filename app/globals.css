@@ -16,12 +16,6 @@ body {
   /* Light text color */
 }
 
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
-
 @layer utilities {
   .red-shadow {
     box-shadow: 0 0 10px 0 rgb(255, 0, 0);

@@ -105,7 +105,7 @@ export const HeroNext = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                             className="bg-gradient-to-r from-red-800 via-red-900 to-gray-900 border-2 border-red-900 text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 cursor-pointer"
                         >
                             Know More

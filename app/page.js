@@ -1,7 +1,6 @@
 
 import { Navbar } from "./components/navbar/Navbar";
 import { Banner } from "./components/banner/Banner";
-import { Services } from "./components/services/Services";
 import { Experience } from "./components/experience/Experience";
 import { Projects } from "./components/projects/Projects";
 import { ContactForm } from "./components/contactForm/ContactForm";
@@ -17,7 +16,6 @@ const page = () => {
       <Navbar />
       <HeroNext />
       <Banner />
-      <Services />
       <Experience />
       {/* <Projects /> */}
       <ProjectCarousel />
