@@ -33,33 +33,43 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950 text-white shadow-md border-b border-gray-700 border-opacity-50 border-2">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-2 px-4">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-6">
         {/* Logo Section */}
-        <div className="flex items-center">
-          <div className="text-xl bg-red-600 text-white rounded-full w-[50px] h-[50px] flex justify-center items-center font-extrabold">
-            A
+        <div className="flex items-center group cursor-pointer">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-rose-400 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative text-xl bg-gradient-to-br from-red-600 to-rose-700 text-white rounded-full w-[45px] h-[45px] flex justify-center items-center font-extrabold shadow-lg shadow-red-900/20">
+              A
+            </div>
           </div>
-          <h1 className="font-satisfies text-xl font-bold ml-2">mit Gupta.</h1>
+          <h1 className="font-satisfies text-2xl font-bold ml-3 tracking-tight text-white group-hover:text-red-500 transition-colors duration-300">
+            mit<span className="text-red-600">.</span>
+          </h1>
         </div>
 
         {/* Nav Links */}
         <div className="hidden md:block">
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-2">
             {NavLinks.map((link) => {
               const isActive = pathname === link.link;
               return (
-                <li key={link.id}>
+                <li key={link.id} className="relative group">
                   <a
                     href={link.link}
                     onMouseEnter={playHover}
                     onClick={(e) => handleNavClick(e, link.link)}
                     className={`${isActive
-                      ? "text-red-600 text-xl font-bold"
-                      : "text-red-700"
-                      } inline-block text-lg py-1 px-4 hover:[box-shadow:0_0_10px_0_rgba(255,0,0,0.8)] hover:bg-red-500 hover:text-white transition-all duration-500 hover:scale-105 hover:rounded-sm`}
+                      ? "text-white font-medium"
+                      : "text-gray-400 hover:text-white"
+                      } relative px-4 py-2 text-sm uppercase tracking-wider transition-all duration-300 block`}
                   >
                     {link.title}
+                    {/* Animated Underline */}
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : ""
+                        }`}
+                    ></span>
                   </a>
                 </li>
               );
@@ -68,16 +78,19 @@ export const Navbar = () => {
         </div>
 
         {/* Theme Toggle & Sound Toggle & Resume Button */}
-        <div className="hidden sm:flex items-center gap-3">
-          <ThemeToggle />
-          <button
-            onClick={toggleSound}
-            onMouseEnter={playHover}
-            className="p-2 rounded-md bg-gray-900 border border-gray-700 hover:border-red-500 transition-colors text-gray-400 hover:text-red-500"
-            title={isEnabled ? "Mute Sounds" : "Unmute Sounds"}
-          >
-            {isEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
-          </button>
+        <div className="hidden sm:flex items-center gap-4">
+          <div className="flex items-center bg-white/5 p-1 rounded-full border border-white/10">
+            <ThemeToggle />
+            <button
+              onClick={toggleSound}
+              onMouseEnter={playHover}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
+              title={isEnabled ? "Mute Sounds" : "Unmute Sounds"}
+            >
+              {isEnabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
+            </button>
+          </div>
+
           <button
             onClick={() => {
               playClick();
@@ -86,30 +99,38 @@ export const Navbar = () => {
               );
             }}
             onMouseEnter={playHover}
-            className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 cursor-pointer hover:scale-105"
+            className="relative group px-6 py-2 overflow-hidden rounded-full bg-red-600 text-white font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] active:scale-95"
           >
-            Get Resume
+            <span className="relative z-10 text-sm uppercase tracking-widest">Resume</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden flex items-center gap-3">
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center gap-4">
           <button
             onClick={toggleSound}
-            className="p-2 rounded-md bg-gray-800 border border-gray-700 text-gray-400"
+            className="p-2 rounded-full bg-white/5 border border-white/10 text-gray-400"
           >
             {isEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
           </button>
-          <IoMenuSharp
+          <button
             onClick={toggleMenu}
-            className="text-4xl cursor-pointer"
-          />
+            className="text-white p-1 hover:bg-white/5 rounded-md transition-colors"
+          >
+            <IoMenuSharp size={32} />
+          </button>
         </div>
 
         {/* Mobile Sidebar */}
         {isMenuOpen && (
-          <div className="fixed top-0 left-0 z-[60] w-2/3 sm:w-1/3 h-full bg-gray-800">
-            <ResponsiveMenu show={isMenuOpen} onClose={closeMenu} />
+          <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm md:hidden" onClick={closeMenu}>
+            <div
+              className="absolute top-0 left-0 w-[280px] h-full bg-gray-950 border-r border-white/10 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ResponsiveMenu show={isMenuOpen} onClose={closeMenu} />
+            </div>
           </div>
         )}
       </div>
