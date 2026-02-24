@@ -3,6 +3,9 @@ import { Satisfy } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
 import { PageLoader } from "./components/loader/PageLoader";
+import { CommandPalette } from "./components/ui/CommandPalette";
+import { SoundProvider } from "./components/sound/SoundProvider";
+import { AchievementSystem } from "./components/gamification/AchievementSystem";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,8 +66,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${satisfy.variable} antialiased`}
       >
         <ThemeProvider>
-          <PageLoader />
-          {children}
+          <SoundProvider>
+            <CommandPalette />
+            <AchievementSystem />
+            <PageLoader />
+            {children}
+          </SoundProvider>
         </ThemeProvider>
       </body>
     </html>
