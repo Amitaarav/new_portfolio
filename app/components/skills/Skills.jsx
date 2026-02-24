@@ -6,131 +6,187 @@ import { SiTypescript, SiJavascript, SiPostgresql, SiMongodb, SiTailwindcss, SiS
 import { TbApi } from "react-icons/tb";
 
 const skills = {
-  "Programming Languages": [
-    { name: "JavaScript", icon: <SiJavascript />, level: 95, color: "#F7DF1E" },
-    { name: "TypeScript", icon: <SiTypescript />, level: 90, color: "#3178C6" },
-    { name: "C++", icon: <SiCplusplus />, level: 85, color: "#00599C" },
-    { name: "Python", icon: <FaPython />, level: 80, color: "#3776AB" },
-    { name: "Java", icon: <FaJava />, level: 75, color: "#007396" },
-    { name: "Golang", icon: <SiGoland />, level: 70, color: "#00ADD8" },
-    { name: "SQL", icon: <SiPostgresql />, level: 85, color: "#336791" },
-    { name: "C", icon: <SiC />, level: 60, color: "#A8B9CC" },
-    { name: "Solidity", icon: <SiSolidity />, level: 65, color: "#363636" },
-  ],
-  Frontend: [
-    { name: "React.js", icon: <FaReact />, level: 95, color: "#61DAFB" },
-    { name: "Next.js", icon: <SiNextdotjs />, level: 90, color: "#000000" },
-    { name: "Redux", icon: <SiRedux />, level: 85, color: "#764ABC" },
-    { name: "Context API", icon: <FaReact />, level: 90, color: "#61DAFB" },
-    { name: "Recoil", icon: <FaAtom />, level: 80, color: "#3578E5" },
-    { name: "TailwindCSS", icon: <SiTailwindcss />, level: 95, color: "#06B6D4" },
-    { name: "HTML", icon: <SiHtml5 />, level: 95, color: "#E34F26" },
-    { name: "CSS", icon: <SiCss3 />, level: 90, color: "#1572B6" },
-  ],
-  Backend: [
-    { name: "Node.js", icon: <FaNodeJs />, level: 90, color: "#339933" },
-    { name: "Express.js", icon: <FaNodeJs />, level: 90, color: "#000000" },
-    { name: "REST APIs", icon: <TbApi />, level: 95, color: "#009688" },
-    { name: "WebSockets", icon: <FaNodeJs />, level: 85, color: "#339933" },
-    { name: "Kafka", icon: <SiApachekafka />, level: 80, color: "#231F20" },
-    { name: "WebRTC", icon: <SiWebrtc />, level: 75, color: "#333333" },
-    { name: "Prisma", icon: <SiPrisma />, level: 85, color: "#2D3748" },
-    { name: "Postman", icon: <SiPostman />, level: 90, color: "#FF6C37" },
-  ],
-  Databases: [
-    { name: "PostgreSQL", icon: <SiPostgresql />, level: 90, color: "#336791" },
-    { name: "MongoDB", icon: <SiMongodb />, level: 90, color: "#47A248" },
-    { name: "Redis", icon: <SiRedis />, level: 85, color: "#DC382D" },
-    { name: "TimescaleDB", icon: <SiTimescale />, level: 75, color: "#FDC500" },
-  ],
-  "Cloud & DevOps": [
-    { name: "AWS", icon: <FaAws />, level: 80, color: "#FF9900" },
-    { name: "Docker", icon: <FaDocker />, level: 85, color: "#2496ED" },
-    { name: "Kubernetes", icon: <SiKubernetes />, level: 75, color: "#326CE5" },
-    { name: "Git", icon: <FaGitAlt />, level: 95, color: "#F05032" },
-    { name: "GitHub", icon: <FaGithub />, level: 95, color: "#181717" },
-    { name: "CI/CD", icon: <FaGithub />, level: 80, color: "#2088FF" },
-  ],
-  Blockchain: [
-    { name: "Solana Web3.js", icon: <SiSolana />, level: 85, color: "#9945FF" },
-    { name: "Ethers.js", icon: <FaEthereum />, level: 80, color: "#3C3C3D" },
-    { name: "Wallet Adapter", icon: <FaWallet />, level: 85, color: "#ffffff" },
-    { name: "Smart Contracts", icon: <SiSolidity />, level: 75, color: "#363636" },
-    { name: "On-chain Tx", icon: <SiSolana />, level: 80, color: "#9945FF" },
-  ],
+  "Programming & Logic": {
+    items: [
+      { name: "JavaScript", icon: <SiJavascript />, level: 95, color: "#F7DF1E" },
+      { name: "TypeScript", icon: <SiTypescript />, level: 90, color: "#3178C6" },
+      { name: "C++", icon: <SiCplusplus />, level: 85, color: "#00599C" },
+      { name: "Python", icon: <FaPython />, level: 80, color: "#3776AB" },
+      { name: "SQL", icon: <SiPostgresql />, level: 85, color: "#336791" },
+      { name: "Go", icon: <SiGoland />, level: 70, color: "#00ADD8" },
+      { name: "C", icon: <SiC />, level: 60, color: "#A8B9CC" },
+      { name: "Java", icon: <FaJava />, level: 75, color: "#007396" },
+    ],
+    className: "md:col-span-2 lg:col-span-2 row-span-2"
+  },
+  "Frontend Craft": {
+    items: [
+      { name: "React.js", icon: <FaReact />, level: 95, color: "#61DAFB" },
+      { name: "Next.js", icon: <SiNextdotjs />, level: 90, color: "#ffffff" },
+      { name: "Redux", icon: <SiRedux />, level: 85, color: "#764ABC" },
+      { name: "Tailwind", icon: <SiTailwindcss />, level: 95, color: "#06B6D4" },
+      { name: "HTML5/CSS3", icon: <SiHtml5 />, level: 95, color: "#E34F26" },
+      { name: "Recoil", icon: <FaAtom />, level: 80, color: "#3578E5" },
+    ],
+    className: "md:col-span-1 lg:col-span-1"
+  },
+  "Backend & Systems": {
+    items: [
+      { name: "Node.js", icon: <FaNodeJs />, level: 90, color: "#339933" },
+      { name: "Kafka", icon: <SiApachekafka />, level: 80, color: "#ffffff" },
+      { name: "Prisma", icon: <SiPrisma />, level: 85, color: "#2D3748" },
+      { name: "WebRTC", icon: <SiWebrtc />, level: 75, color: "#ffffff" },
+      { name: "WebSockets", icon: <FaNodeJs />, level: 85, color: "#339933" },
+      { name: "REST APIs", icon: <TbApi />, level: 95, color: "#009688" },
+    ],
+    className: "md:col-span-1 lg:col-span-1"
+  },
+  "Storage Solutions": {
+    items: [
+      { name: "Postgres", icon: <SiPostgresql />, level: 90, color: "#336791" },
+      { name: "MongoDB", icon: <SiMongodb />, level: 90, color: "#47A248" },
+      { name: "Redis", icon: <SiRedis />, level: 85, color: "#DC382D" },
+      { name: "Timescale", icon: <SiTimescale />, level: 75, color: "#FDC500" },
+    ],
+    className: "md:col-span-1"
+  },
+  "DevOps & Cloud": {
+    items: [
+      { name: "AWS", icon: <FaAws />, level: 80, color: "#FF9900" },
+      { name: "Docker", icon: <FaDocker />, level: 85, color: "#2496ED" },
+      { name: "Kubernetes", icon: <SiKubernetes />, level: 75, color: "#326CE5" },
+      { name: "CI/CD", icon: <FaGitAlt />, level: 80, color: "#F05032" },
+    ],
+    className: "md:col-span-1"
+  },
+  "Web3 & Blockchain": {
+    items: [
+      { name: "Solana", icon: <SiSolana />, level: 85, color: "#9945FF" },
+      { name: "Solidity", icon: <SiSolidity />, level: 75, color: "#ffffff" },
+      { name: "Ethers.js", icon: <FaEthereum />, level: 80, color: "#3C3C3D" },
+      { name: "Anchor", icon: <SiSolana />, level: 80, color: "#9945FF" },
+    ],
+    className: "md:col-span-2 lg:col-span-1"
+  },
 };
 
-const SkillCard = ({ name, icon, level, color }) => (
+const BentoCard = ({ title, items, className }) => (
   <motion.div
-    whileHover={{ y: -5 }}
-    className="flex-1 min-w-[130px] bg-gray-900/50 backdrop-blur-sm border border-gray-800 p-3 rounded-xl hover:border-red-900/50 transition-colors group flex flex-col items-center justify-center gap-2"
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className={`bg-gray-900/40 backdrop-blur-xl border border-white/5 p-8 rounded-[2.5rem] group hover:border-red-500/40 transition-all duration-700 shadow-2xl flex flex-col ${className}`}
   >
-    <div className="text-3xl transition-transform duration-300 group-hover:scale-110" style={{ color: color || '#fff' }}>
-      {icon}
+    <div className="flex items-center justify-between mb-8">
+      <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+        <span className="w-2 h-8 bg-red-600 rounded-full" />
+        {title}
+      </h3>
+      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-red-600/20 group-hover:rotate-12 transition-all duration-500">
+        <Code size={18} className="text-gray-400 group-hover:text-red-500" />
+      </div>
     </div>
-    <span className="font-semibold text-gray-200 text-sm">{name}</span>
 
-    {/* Minimal Progress Bar */}
-    <div className="w-full bg-gray-800 rounded-full h-1.5 overflow-hidden mt-1">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${level}%` }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400"
-      />
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 flex-grow">
+      {items.map((skill, idx) => (
+        <motion.div
+          key={skill.name}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: idx * 0.05 }}
+          className="flex flex-col items-center gap-3 group/skill relative"
+        >
+          <div
+            className="text-4xl p-4 rounded-3xl bg-black/40 border border-white/5 group-hover/skill:bg-white/5 group-hover/skill:border-red-500/30 group-hover/skill:-translate-y-2 transition-all duration-500 relative z-10"
+            style={{ color: skill.color }}
+          >
+            {skill.icon}
+          </div>
+          <span className="text-xs font-semibold text-gray-400 group-hover/skill:text-white transition-colors text-center">
+            {skill.name}
+          </span>
+
+          <div className="w-full bg-white/5 rounded-full h-1 mt-auto overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: `${skill.level}%` }}
+              transition={{ duration: 1.5, ease: "circOut" }}
+              className="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400"
+            />
+          </div>
+        </motion.div>
+      ))}
     </div>
   </motion.div>
 );
 
+// Minimal local Code icon since lucide-react might not be imported here
+const Code = ({ size, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <polyline points="16 18 22 12 16 6"></polyline>
+    <polyline points="8 6 2 12 8 18"></polyline>
+  </svg>
+);
+
 export const Skills = () => {
   return (
-    <section id="skills" className="py-16 bg-black text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-red-600 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-600 rounded-full blur-[100px]"></div>
+    <section id="skills" className="py-24 bg-black text-white relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-red-900/10 rounded-full blur-[150px] opacity-50" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-900/10 rounded-full blur-[150px] opacity-30" />
+        <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-red-900/20 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="relative mb-12 text-center">
-          <p className="text-3xl lg:text-4xl tracking-widest uppercase font-bold text-white">
-            Technical Skills
-          </p>
-          <p className="text-5xl lg:text-8xl text-white/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 uppercase font-extrabold whitespace-nowrap pointer-events-none">
-            Expertise
-          </p>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A comprehensive overview of my technical stack and proficiency levels.
-          </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-2 mb-4"
+          >
+            <span className="w-12 h-[1px] bg-red-600" />
+            <span className="text-red-500 font-mono tracking-widest text-sm uppercase">Technical Capacity</span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl font-extrabold mb-6"
+          >
+            My Tech Stack <span className="text-red-600">.</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed"
+          >
+            A curated selection of technologies I've mastered to build high-performance,
+            scalable, and secure digital ecosystems.
+          </motion.p>
         </div>
 
-        {/* Horizontal Scroll Layout for All Categories */}
-        <div className="flex flex-nowrap overflow-x-auto pb-8 gap-8 hide-scrollbar snap-x snap-mandatory">
-          {Object.entries(skills).map(([category, items], idx) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(skills).map(([category, { items, className }], idx) => (
+            <BentoCard
               key={category}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="flex-shrink-0 snap-start min-w-[300px] md:min-w-[400px] max-w-[400px]"
-            >
-              <h3 className="text-xl font-bold text-red-500 mb-6 flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {items.map((skill) => (
-                  <SkillCard key={skill.name} {...skill} />
-                ))}
-              </div>
-            </motion.div>
+              title={category}
+              items={items}
+              className={className}
+            />
           ))}
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-4 md:hidden">
-          <span className="text-xs text-gray-500 animate-pulse">Swipe to explore →</span>
         </div>
       </div>
     </section>

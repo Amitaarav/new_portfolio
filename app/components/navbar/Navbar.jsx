@@ -5,6 +5,8 @@ import { IoMenuSharp } from "react-icons/io5";
 import { useState } from "react";
 import { ResponsiveMenu } from "./ResponsiveMenu";
 import { ThemeToggle } from "../theme/ThemeToggle";
+import { useSound } from "../sound/SoundProvider";
+import { Volume2, VolumeX } from "lucide-react";
 
 export const NavLinks = [
   { id: 1, title: "Home", link: "/" },
@@ -18,9 +20,17 @@ export const NavLinks = [
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { isEnabled, toggleSound, playHover, playClick } = useSound();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleNavClick = (e, link) => {
+    playClick();
+    if (link === "/") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950 text-white shadow-md border-b border-gray-700 border-opacity-50 border-2">
@@ -42,6 +52,8 @@ export const Navbar = () => {
                 <li key={link.id}>
                   <a
                     href={link.link}
+                    onMouseEnter={playHover}
+                    onClick={(e) => handleNavClick(e, link.link)}
                     className={`${isActive
                       ? "text-red-600 text-xl font-bold"
                       : "text-red-700"
@@ -55,15 +67,25 @@ export const Navbar = () => {
           </ul>
         </div>
 
-        {/* Theme Toggle & Resume Button */}
+        {/* Theme Toggle & Sound Toggle & Resume Button */}
         <div className="hidden sm:flex items-center gap-3">
           <ThemeToggle />
           <button
-            onClick={() =>
+            onClick={toggleSound}
+            onMouseEnter={playHover}
+            className="p-2 rounded-md bg-gray-900 border border-gray-700 hover:border-red-500 transition-colors text-gray-400 hover:text-red-500"
+            title={isEnabled ? "Mute Sounds" : "Unmute Sounds"}
+          >
+            {isEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
+          <button
+            onClick={() => {
+              playClick();
               window.open(
-              "https://drive.google.com/file/d/1TfBWWerakNOgpbR3HF2sknR65U2Enc5Q/view?usp=sharing"
-              )
-            }
+                "https://drive.google.com/file/d/1TfBWWerakNOgpbR3HF2sknR65U2Enc5Q/view?usp=sharing"
+              );
+            }}
+            onMouseEnter={playHover}
             className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-all duration-500 cursor-pointer hover:scale-105"
           >
             Get Resume
@@ -71,7 +93,13 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleSound}
+            className="p-2 rounded-md bg-gray-800 border border-gray-700 text-gray-400"
+          >
+            {isEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
           <IoMenuSharp
             onClick={toggleMenu}
             className="text-4xl cursor-pointer"

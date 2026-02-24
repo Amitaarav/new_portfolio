@@ -9,6 +9,7 @@ import { Skills } from "./components/skills/Skills";
 import { ProjectCarousel } from "./components/projects/ProjectCarousel";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Services } from "./components/services/Services";
+import { LiveStats } from "./components/stats/LiveStats";
 const page = () => {
   return (
     <main>
@@ -16,6 +17,7 @@ const page = () => {
       <HeroNext />
       {/* <Banner /> */}
       <Services />
+      <LiveStats />
       <Experience />
       <ProjectCarousel />
       <Skills />
