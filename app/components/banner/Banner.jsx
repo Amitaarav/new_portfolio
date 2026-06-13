@@ -49,7 +49,7 @@ export const Banner = () => {
           </div>
         </div>
       </div>
-      <BackgroundBeams />
+      {/* <BackgroundBeams /> */}
     </section>
   )
 }

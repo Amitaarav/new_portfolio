@@ -10,17 +10,18 @@ import { ProjectCarousel } from "./components/projects/ProjectCarousel";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Services } from "./components/services/Services";
 import { LiveStats } from "./components/stats/LiveStats";
+import { AchievementSystem } from "./components/gamification/AchievementSystem";
 const page = () => {
   return (
     <main>
       <Navbar />
       <HeroNext />
-      {/* <Banner /> */}
       <Services />
       <LiveStats />
       <Experience />
       <ProjectCarousel />
       <Skills />
+      <AchievementSystem/>
       <ContactForm />
       <Footer />
       <ScrollToTop />

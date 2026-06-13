@@ -70,7 +70,7 @@ export const HeroNext = () => {
     return (
         <section style={wallBackground} className="bg-black text-white overflow-hidden">
             <div className="bg-gradient-to-r from-red-900/50 to-gray-950">
-                <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[650px] px-6 py-12 md:py-24">
+                <div className="container flex  mx-auto min-h-[650px] px-6 py-12 md:py-24 ml-8">
                     {/* Brand info */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -135,33 +135,6 @@ export const HeroNext = () => {
                     </motion.div>
 
                     {/* Hero Image */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1.2 }}
-                        className="flex justify-center items-center mt-10 md:mt-0 relative"
-                    >
-                        <div className="p-[2px] rounded-3xl bg-gradient-to-r from-red-800 via-red-900 to-gray-900 bg-[length:400%_400%] animate-shine max-w-full">
-                            <div className="bg-black rounded-3xl overflow-hidden h-[400px] sm:h-[500px] md:h-[600px] flex items-end relative group shadow-red transition-transform duration-700 hover:scale-105 w-full max-w-[400px] sm:max-w-[500px]">
-
-                                {/* Spinning circle */}
-                                <Image
-                                    src={Circle}
-                                    alt="circle"
-                                    className="absolute w-[250px] sm:w-[400px] md:w-[500px] -top-4 left-1/2 -translate-x-1/2 -z-10 animate-spin group-hover:animate-pulse transition duration-300"
-                                />
-
-                                {/* Hero image */}
-                                <Image
-                                    src={HeroImg3}
-                                    alt="hero image"
-                                    className="w-full h-auto object-contain transition duration-300 group-hover:grayscale group-hover:scale-90"
-                                />
-
-                            </div>
-                        </div>
-
-                    </motion.div>
                 </div>
             </div>
             <BackgroundBeams />

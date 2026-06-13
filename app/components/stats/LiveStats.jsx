@@ -66,14 +66,14 @@ export const LiveStats = () => {
                             className="flex items-center gap-2 mb-4"
                         >
                             <span className="w-8 h-[1px] bg-red-600" />
-                            <span className="text-red-500 font-mono tracking-widest text-xs uppercase italic">Real-time Metrics</span>
+                            <span className="text-red-500 font-mono tracking-widest text-xs uppercase">Real-time Metrics</span>
                         </motion.div>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-5xl font-black text-white"
+                            className="text-2xl md:text-3xl font-black text-white"
                         >
-                            Live Performance <span className="text-red-600">.</span>
+                            STATS <span className="text-red-600">.</span>
                         </motion.h2>
                     </div>
                     <motion.p
@@ -85,22 +85,13 @@ export const LiveStats = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <StatCard
                         title="Open Source"
                         value={stats.github.repos}
                         icon={<Github size={24} />}
                         label="Repositories"
                         loading={stats.loading}
-                        onHover={playHover}
-                    />
-                    <StatCard
-                        title="Stars Earned"
-                        value={stats.github.stars}
-                        icon={<Star size={24} />}
-                        label="Project Stargazers"
-                        loading={stats.loading}
-                        color="text-yellow-500"
                         onHover={playHover}
                     />
                     <StatCard
@@ -121,6 +112,15 @@ export const LiveStats = () => {
                         color="text-red-500"
                         onHover={playHover}
                     />
+                    <StatCard
+                        title="Stars Earned"
+                        value={stats.github.stars}
+                        icon={<Star size={24} />}
+                        label="Project Stargazers"
+                        loading={stats.loading}
+                        color="text-yellow-500"
+                        onHover={playHover}
+                    />
                 </div>
             </div>
         </section>
@@ -133,21 +133,21 @@ const StatCard = ({ title, value, icon, label, loading, color = "text-red-500", 
         whileInView={{ opacity: 1, y: 0 }}
         whileHover={{ y: -10, scale: 1.02 }}
         onMouseEnter={onHover}
-        className="bg-gray-900/40 backdrop-blur-xl border border-white/5 p-8 rounded-[2rem] flex flex-col items-center text-center gap-4 group transition-all duration-500 hover:border-red-500/30 hover:bg-gray-900/60"
+        className="flex flex-col items-center text-center gap-4 group transition-all duration-500"
     >
         <div className={`p-4 rounded-2xl bg-black/40 border border-white/5 group-hover:bg-red-500/10 group-hover:border-red-500/20 transition-all duration-500 ${color}`}>
             {icon}
         </div>
         <div className="space-y-1">
             <h3 className="text-gray-400 text-xs font-bold uppercase tracking-wider">{title}</h3>
-            <div className="text-5xl font-black text-white tracking-tighter">
+            <div className="text-4xl font-black text-white tracking-tighter">
                 {loading ? (
                     <div className="h-12 w-20 bg-white/5 animate-pulse rounded-xl mx-auto" />
                 ) : (
                     value
                 )}
             </div>
-            <p className="text-[10px] text-gray-500 font-medium">{label}</p>
+            <p className="text-md text-gray-500 font-medium">{label}</p>
         </div>
     </motion.div>
 );
